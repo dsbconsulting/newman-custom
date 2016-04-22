@@ -104,7 +104,7 @@ var VariableProcessor = jsface.Class({
 		var pairObject = Helpers.transformFromKeyValue(kvpairs);
 		_und.each(properties, function(prop) {
 			// check if the prop exists
-			if (request[prop] !== undefined)  {
+			if (request[prop] !== undefined && request[prop] !== null)  {
 				if (typeof request[prop] === "string") {
 					// if string, use directly
 					request.transformed[prop] = this._findReplace(request[prop], pairObject, this.ENV_REGEX);
